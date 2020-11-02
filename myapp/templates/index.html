@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block body %}
+
+<h3>Inicio</h3>
+<div class="col-lg-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a href="{% url 'add_carro' %}"><strong>CADASTRAR Associação 1-N Carro-Cores -----:</strong></a>
+            <a href="{% url 'list_carros' %}"><strong>Lista de Cores</strong></a>
+
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a href="{% url 'add_time' %}"><strong>CADASTRAR Associação 1-N Time-Jogadores -:</strong></a>
+            <a href="{% url 'list_jogadores' %}"><strong>Lista de Jogadores</strong></a>
+
+            
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a href="{% url 'add_med' %}"><strong>CADASTRAR Associação N-N Medico-Hospital :</strong></a>
+            <a href="{% url 'list_medicos' %}"><strong>Lista de Medico</strong></a>
+
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a href="{% url 'add_livro' %}"><strong>CADASTRAR Associação N-N Editora-Livro ---:</strong></a>
+            <a href="{% url 'list_livros' %}"><strong>Lista de Livro</strong></a>
+
+        </div>
+    </div>
+    {% for carro in carros %}
+    <h2>{{carro.nome}}</h2>
+    {% endfor %}
+
+
+</div>
+
+{% endblock %}
